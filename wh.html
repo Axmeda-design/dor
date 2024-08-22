@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+       .form{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        margin-top: 20%;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+       }
+
+       .for{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        margin-top: -29%;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        visibility: hidden;
+       }
+
+       .fo{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        margin-top: -39%;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        /* visibility: hidden; */
+       }
+
+       input[type="text"], input[type="email"]{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 5px;
+       }
+
+       button{
+        padding: 10px 20px;
+        background-color: rgb(0, 204, 255);
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: sans-serif;
+        margin-top: 10px;
+        width: 100%;
+        align-self: center;
+        transition: background-color 0.3s ease;
+       }
+
+       button:hover{
+        background-color: rgb(0, 179, 225);
+       }
+       
+       label{
+        font-size: 14px;
+        margin-bottom: 5px;
+       }
+       
+       /* .container{
+        width: 50%;
+        background-color: white;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3); */
+       /* } */
+
+        p{
+        font-family: sans-serif;
+        font-size: 15px;
+        padding: 10px;
+
+       }
+
+      .container button{
+        padding: 10px 20px;
+        background-color: rgb(0, 204, 255);
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: sans-serif;
+        margin-top: 10px;
+        width: 100%;
+        align-self: center;
+        transition: background-color 0.3s ease;
+       }
+       #na{
+        font-size: 12px; font-family: sans-serif; color: red; margin-top: -9px; visibility: hidden;
+       }
+       #em{
+        font-size: 12px; font-family: sans-serif;  color: red;  margin-top: -9px; visibility: hidden; 
+       }
+       #khalad{
+        position: absolute; color:red; top:57%; left:60%; visibility: hidden;
+       }
+       #khala{
+        position: absolute; color:red; top:57%; left:60%; visibility: hidden;
+       }
+
+       @media screen and (max-width: 600px){
+       .form{
+        width: 100%;
+        position: absolute;
+        top: 30%;
+       }
+       .for{
+        width: 100%;
+        position: absolute;
+        top: 30%;
+       }
+
+       }
+
+       
+    </style>
+
+    
+</head>
+<body>
+    <div class="form" id="form">
+    <input type="text" id="name">
+    <span  id="na" >Please Enter Your Name </span>
+
+    <svg  id="khalad" class="x" xmlns="http://www.w3.org/2000/svg"  width="29" height="29" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+      </svg>
+
+    <input type="email" id="email" style="margin-top: 10px;">
+    <span id="na">Please Enter Your Email </span>
+    <svg  id="khala" class="x" xmlns="http://www.w3.org/2000/svg"  width="29" height="29" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+      </svg>
+
+
+    <button id="btn" style="margin-top: 10px;">Submit</button>
+
+    </div>
+
+    <div class="for" id="for">
+        <p id="hh">soo dhawaada asxaabta</p>
+    
+        <button id="bt">Ok</button>
+    
+        </div>
+
+     
+
+    <!-- .<div class="container">
+        <p id="bob">Kusoo Dhawow meeshaan waa meeshaada</p>
+
+        <button>Ok</button>
+    </div> -->
+<script>
+
+    const form =document.querySelector("#form")
+    const name =document.querySelector("#name")
+    const email =document.querySelector("#email")
+    const button =document.querySelector("#btn")
+    const pop =document.querySelector("#for")
+    const popbtn =document.querySelector("#bt")
+    const hh =document.querySelector("#hh")
+
+    const po =document.querySelector("#fo")
+    const opbtn =document.querySelector("#bb")
+    const h =document.querySelector("#h")
+
+    const nam =document.querySelector("#na")
+    const em =document.querySelector("#em")
+    const khalad =document.querySelector("#khalad")
+    const khala =document.querySelector("#khala")
+
+
+
+
+
+    button.addEventListener("click",(event) =>{
+        event.preventDefault()
+        if(name.value.trim() === ""){
+
+          
+
+           
+           alert("please enter your name and email address")
+
+          }
+
+       
+
+        else{
+          pop.style='visibility:visible'
+          hh.innerHTML=`${name.value} soo dhawow emalkaakuna waa ${email.value}`
+
+        }
+    })
+
+    popbtn.addEventListener("click",(event)=>{
+        event.preventDefault()  
+          pop.style='visibility:hidden'
+    })
+
+    opbtn.addEventListener("click",(event)=>{
+        event.preventDefault()
+          po.style='visibility:hidden'
+    })
+
+</script>
+</body>
+</html>
